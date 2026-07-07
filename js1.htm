@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      #change, #calc {
+        padding: 40px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="change">
+      <input id="a" type="text" placeholder="ad" />
+      <button onclick="adDeyis()"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+      <input id="b" type="text" placeholder="Ad" />
+    </div>
+    <div id="calc">
+      <input id="a1" type="number" />
+      <input id="a2" type="number" />
+      <input id="a3" type="number" />
+      <button onclick="hesabla()">hesabla</button>
+      <div id="cvb"></div>
+    </div>
+
+
+
+    <script>
+      let a = document.getElementById('a')
+      let b = document.getElementById('b')
+      let a1 = document.getElementById('a1')
+      let a2 = document.getElementById('a2')
+      let a3 = document.getElementById('a3')
+      let cvb = document.getElementById('cvb')
+
+      function adDeyis() {
+        let temp = a.value
+        a.value = b.value
+        b.value = temp
+      }
+
+      function hesabla() {
+        cvb.innerHTML = ` 
+          <ul>
+            <li>Cəm: ${+a1.value + +a2.value + +a3.value}</li>
+            <li>Əd.orta:${(+a1.value + +a2.value + +a3.value) / 3}</li>
+            <li>Hasil:${ a1.value * a2.value * a3.value}</li>
+          </ul>
+        `
+      }
+
+    </script>
+  </body>
+</html>
